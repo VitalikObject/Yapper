@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\DataStream">
+      <UniqueIdentifier>{fc43c0a8-4b8c-4fa6-814d-e3d568a07b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataStream">
+      <UniqueIdentifier>{b2241629-3c90-4b3f-b738-6a75c9453c9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Message">
+      <UniqueIdentifier>{db06af63-f741-4cd9-81d0-2e93c1794023}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Message">
+      <UniqueIdentifier>{5ac8ff1d-2808-4d9a-a737-db05a867eb29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Message\Account">
+      <UniqueIdentifier>{7dbfb1d1-d6bd-4095-8c2c-b62240572e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Message\Account">
+      <UniqueIdentifier>{6e2558ea-bb4c-4adc-a82c-a05c3ffb09c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{e0379e33-6e48-4a88-94ae-c6cc0a191a02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{e32ccbb1-e4ae-4ceb-b7d5-3024e3363403}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Network">
+      <UniqueIdentifier>{d159e309-a95e-40bc-a0bd-3e2b12348146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Network">
+      <UniqueIdentifier>{d108650a-17c6-4bd2-ab36-3925e4d9b5c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Debug">
+      <UniqueIdentifier>{edefb130-d1a7-40ce-ada7-ae7018bdf68c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Debug">
+      <UniqueIdentifier>{23bb4f9c-ff58-40b7-81fd-1c6e3690ece3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Cryptography">
+      <UniqueIdentifier>{a7303060-01bd-4c9b-a160-81a9d65fd8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Cryptography">
+      <UniqueIdentifier>{2a4e65a2-9073-40a0-9615-6a623121a699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{eed51c94-a15a-47b0-9cf1-b417f6988c76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{812ab9a0-6b57-42b5-9752-95e19cc6e57e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Handler">
+      <UniqueIdentifier>{e46480e8-4393-44f4-ae31-e649652c4200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Handler">
+      <UniqueIdentifier>{78a33dd9-db08-43dc-bfdd-57b4b14552d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Message\Chat">
+      <UniqueIdentifier>{6a336295-6ae3-46cb-b086-5b4bf10d3cc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Message\Chat">
+      <UniqueIdentifier>{32cf1ed6-d461-495b-849d-56ee441f5f54}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tcp_connection.h">
+      <Filter>Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="debugger.h">
+      <Filter>Header Files\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="logic_long.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="logic_message_factory.h">
+      <Filter>Header Files\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="messaging.h">
+      <Filter>Header Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="stream_encrypter.h">
+      <Filter>Header Files\Cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="logic_yapper_message_factory.h">
+      <Filter>Header Files\Message</Filter>
+    </ClInclude>
+    <ClInclude Include="message_handler_base.h">
+      <Filter>Header Files\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="login_status_message.h">
+      <Filter>Header Files\Message\Account</Filter>
+    </ClInclude>
+    <ClInclude Include="send_to_chat_message.h">
+      <Filter>Header Files\Message\Chat</Filter>
+    </ClInclude>
+    <ClInclude Include="update_chat_message.h">
+      <Filter>Header Files\Message\Chat</Filter>
+    </ClInclude>
+    <ClInclude Include="request_full_chat_message.h">
+      <Filter>Header Files\Message\Chat</Filter>
+    </ClInclude>
+    <ClInclude Include="full_chat_message.h">
+      <Filter>Header Files\Message\Chat</Filter>
+    </ClInclude>
+    <ClInclude Include="name_set_message.h">
+      <Filter>Header Files\Message\Account</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tcp_connection.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="debugger.cpp">
+      <Filter>Source Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="byte_stream.h">
+      <Filter>Header Files\DataStream</Filter>
+    </ClCompile>
+    <ClCompile Include="byte_stream.cpp">
+      <Filter>Source Files\DataStream</Filter>
+    </ClCompile>
+    <ClCompile Include="piranha_message.h">
+      <Filter>Header Files\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="piranha_message.cpp">
+      <Filter>Source Files\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="login_message.h">
+      <Filter>Header Files\Message\Account</Filter>
+    </ClCompile>
+    <ClCompile Include="login_message.cpp">
+      <Filter>Source Files\Message\Account</Filter>
+    </ClCompile>
+    <ClCompile Include="logic_long.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="logic_message_factory.cpp">
+      <Filter>Source Files\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="messaging.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="stream_encrypter.cpp">
+      <Filter>Source Files\Cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="rc4_encrypter.h">
+      <Filter>Header Files\Cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="rc4_encrypter.cpp">
+      <Filter>Source Files\Cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="help_utill.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="help_util.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="logic_yapper_message_factory.cpp">
+      <Filter>Source Files\Message</Filter>
+    </ClCompile>
+    <ClCompile Include="message_handler_base.cpp">
+      <Filter>Source Files\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="login_status_message.cpp">
+      <Filter>Source Files\Message\Account</Filter>
+    </ClCompile>
+    <ClCompile Include="send_to_chat_message.cpp">
+      <Filter>Source Files\Message\Chat</Filter>
+    </ClCompile>
+    <ClCompile Include="update_chat_message.cpp">
+      <Filter>Source Files\Message\Chat</Filter>
+    </ClCompile>
+    <ClCompile Include="request_full_chat_message.cpp">
+      <Filter>Source Files\Message\Chat</Filter>
+    </ClCompile>
+    <ClCompile Include="full_chat_message.cpp">
+      <Filter>Source Files\Message\Chat</Filter>
+    </ClCompile>
+    <ClCompile Include="name_set_message.cpp">
+      <Filter>Source Files\Message\Account</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
