@@ -21,7 +21,6 @@ ByteStream::ByteStream(char* buffer, int length) {
 }
 
 ByteStream::~ByteStream() {
-	//delete[] buffer;
 }
 
 char* ByteStream::getByteArray() const {
@@ -29,10 +28,17 @@ char* ByteStream::getByteArray() const {
 }
 
 void ByteStream::setByteArray(char* buffer, int length) {
-	if (buffer != nullptr) delete[] this->buffer;
+	deleteByteArray();
 
 	this->buffer = buffer;
 	this->length = length;
+}
+
+void ByteStream::deleteByteArray() {
+	if (buffer != nullptr) {
+		delete[] buffer;
+		buffer = nullptr;
+	}
 }
 
 int ByteStream::getLength() const {

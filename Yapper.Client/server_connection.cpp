@@ -17,13 +17,13 @@ Void ServerConnection::ConnectTo(const char *address, int port) {
 }
 
 Void ServerConnection::StartReceiving() {
-    char buffer[PACKET_SIZE] = { 0 };
+    std::unique_ptr<char[]> buffer(new char[PACKET_SIZE]());
     SOCKET serverSocket = tcpConnection->getTCPSocket();
     ServerMessageHandler serverMessageHandler(messaging);
 
     while (true) {
         int totalBytesReceived = 0;
-        int bytesReceived = recv(serverSocket, buffer, sizeof(buffer), 0);
+        int bytesReceived = recv(serverSocket, buffer.get(), PACKET_SIZE, 0);
         if (bytesReceived == SOCKET_ERROR || bytesReceived == 0) {
             closesocket(serverSocket);
             Debugger::print("Server closed the connection");
@@ -33,20 +33,20 @@ Void ServerConnection::StartReceiving() {
         totalBytesReceived += bytesReceived;
 
         while (totalBytesReceived > 0) {
-            PiranhaMessage* message = messaging->onReceive(buffer, totalBytesReceived);
+            PiranhaMessage* message = messaging->onReceive(buffer.get(), totalBytesReceived);
             if (!message)
                 break; 
 
             serverMessageHandler.handleMessage(message);
 
             int remainingBytes = totalBytesReceived - message->getEncodingLength() + Messaging::PACKET_HEADER_LENGTH;
-            memmove(buffer, buffer + message->getEncodingLength() + Messaging::PACKET_HEADER_LENGTH, remainingBytes);
+            memmove(buffer.get(), buffer.get() + message->getEncodingLength() + Messaging::PACKET_HEADER_LENGTH, remainingBytes);
             totalBytesReceived = remainingBytes;
 
             delete message;
         }
 
-        memset(buffer, 0, sizeof(buffer));
+        memset(buffer.get(), 0, sizeof(buffer));
     }
 }
 

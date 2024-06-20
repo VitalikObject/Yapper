@@ -11,8 +11,7 @@ ClientConnection::~ClientConnection() {
 }
 
 void ClientConnection::handleClient(SOCKET clientSocket) {
-    char buffer[PACKET_SIZE] = { 0 };
-
+    std::unique_ptr<char[]> buffer(new char[PACKET_SIZE]());
     TCPConnection clientConnection(clientSocket);
     Messaging messaging(clientConnection);
     ClientMessageHandler clientMessageHandler(this, messaging);
@@ -24,7 +23,7 @@ void ClientConnection::handleClient(SOCKET clientSocket) {
 
     while (true) {
         int totalBytesReceived = 0;
-        int bytesReceived = recv(clientSocket, buffer, sizeof(buffer), 0);
+        int bytesReceived = recv(clientSocket, buffer.get(), PACKET_SIZE, 0);
         if (bytesReceived == SOCKET_ERROR || bytesReceived == 0) {
             closesocket(clientSocket);
             Debugger::print("Client closed the connection");
@@ -37,20 +36,20 @@ void ClientConnection::handleClient(SOCKET clientSocket) {
         totalBytesReceived += bytesReceived;
 
         while (totalBytesReceived > 0) {
-            PiranhaMessage* message = messaging.onReceive(buffer, totalBytesReceived);
+            PiranhaMessage* message = messaging.onReceive(buffer.get(), totalBytesReceived);
             if (!message)
                 break;
 
             clientMessageHandler.handleMessage(message);
 
             int remainingBytes = totalBytesReceived - message->getEncodingLength() + 5;
-            memmove(buffer, buffer + message->getEncodingLength() + 5, remainingBytes);
+            memmove(buffer.get(), buffer.get() + message->getEncodingLength() + 5, remainingBytes);
             totalBytesReceived = remainingBytes;
 
             delete message;
         }
 
-        memset(buffer, 0, sizeof(buffer));
+        memset(buffer.get(), 0, sizeof(buffer));
     }
 }
 
@@ -75,5 +74,5 @@ void ClientConnection::sendMessageToAllClients(PiranhaMessage& message) {
         client->send(message);
     }
 
-    delete[] message.getByteStream().getByteArray();
+    message.getByteStream().deleteByteArray();
 }

@@ -23,6 +23,7 @@ namespace Yapper::Shared::DataStream {
 		~ByteStream();
 		char* getByteArray() const;
 		void setByteArray(char* buffer, int length);
+		void deleteByteArray();
 		int getLength() const;
 		void writeInt(int value);
 		void writeU24(unsigned int value);
