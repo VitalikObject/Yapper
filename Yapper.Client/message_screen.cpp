@@ -64,7 +64,7 @@ Void MessageScreen::RenderOnUiThread() {
 }
 
 Void MessageScreen::OnSendButtonClick(Object^ sender, EventArgs^ e) {
-	SendMessage();
+	OnMessageSend();
 }
 
 Void MessageScreen::OnTimerTick(Object^ sender, EventArgs^ e) {
@@ -79,11 +79,11 @@ Void MessageScreen::OnTimerTick(Object^ sender, EventArgs^ e) {
 
 Void MessageScreen::OnKeyPressed(Object^ sender, KeyEventArgs^ e) {
 	if (e->KeyCode == Keys::Enter) {
-		SendMessage();
+		OnMessageSend();
 	}
 }
 
-Void MessageScreen::SendMessage() {
+Void MessageScreen::OnMessageSend() {
 	String^ message = this->inputBox->Text;
 
 	if (message->Length >= 1) {

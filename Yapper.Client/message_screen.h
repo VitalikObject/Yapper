@@ -20,7 +20,7 @@ namespace Yapper::Client::Screen {
 		Void OnSendButtonClick(Object^ sender, EventArgs^ e);
 		Void OnTimerTick(Object^ sender, EventArgs^ e);
 		Void OnKeyPressed(Object^ sender, KeyEventArgs^ e);
-		Void SendMessage();
+		Void OnMessageSend();
 	public:
 		MessageScreen(GameMain^ gameMain, Stage^ stage);
 		virtual Void DoWork(Object^ sender, DoWorkEventArgs^ e) override;

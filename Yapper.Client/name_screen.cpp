@@ -39,6 +39,7 @@ Void NameScreen::RenderOnUiThread() {
 	this->textBox->BackColor = Color::White;
 	this->textBox->Font = gcnew System::Drawing::Font(textBox->Font->FontFamily, 16);
 	this->textBox->MaxLength = 10;
+	this->textBox->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &NameScreen::OnKeyPressed);
 
 	this->okayButton->Text = "Okay";
 	this->okayButton->Height = 50;
@@ -64,6 +65,16 @@ Void NameScreen::RenderOnUiThread() {
 }
 
 Void NameScreen::OnOkayButtonClick(Object^ sender, EventArgs^ e) {
+	OnNameSet();
+}
+
+Void NameScreen::OnKeyPressed(Object^ sender, KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Enter) {
+		OnNameSet();
+	}
+}
+
+Void NameScreen::OnNameSet() {
 	String^ name = this->textBox->Text;
 
 	if (name->Length >= 1) {

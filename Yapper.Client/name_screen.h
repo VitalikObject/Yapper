@@ -14,6 +14,8 @@ namespace Yapper::Client::Screen {
 		TextBox^ textBox = nullptr;
 		Button^ okayButton = nullptr;
 		Void OnOkayButtonClick(Object^ sender, EventArgs^ e);
+		Void OnKeyPressed(Object^ sender, KeyEventArgs^ e);
+		Void OnNameSet();
 	public:
 		NameScreen(GameMain^ gameMain, Stage^ stage);
 		virtual ~NameScreen();
