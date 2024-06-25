@@ -92,5 +92,5 @@ Void GameMain::Send(PiranhaMessage& message) {
 Void GameMain::Save() {
 	saveUtil->setIsNameSet(GameManager::isNameSet);
 	saveUtil->setName(GameManager::Name);
-	//saveUtil->SaveData();
+	saveUtil->SaveData();
 }
